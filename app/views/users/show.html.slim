@@ -1,0 +1,10 @@
+h1 User: #{@user.name}
+
+= show_for @user do |u|
+  = u.attribute :name
+  = u.attribute :email
+  - if @user.api
+    = u.label :api_token
+    = u.value :authentication_token
+  = u.attribute :created_at, :format => :short
+  = u.attribute :last_sign_in_at, :if_blank => "User did not access yet", :wrapper_html => { :id => "sign_in_timestamp" }

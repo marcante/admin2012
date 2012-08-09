@@ -1,0 +1,16 @@
+h1 Users
+
+table.table.table-bordered
+  thead
+    tr
+      th Name
+      td Email
+      td Actions
+  tbody
+    - @users.each do |user|
+      td= link_to user.name, user_path(user)
+      td= user.email
+      td
+        = link_to "Edit", edit_user_path(user)
+        = " - "
+        = link_to "Delete", user_path(user), method: :delete

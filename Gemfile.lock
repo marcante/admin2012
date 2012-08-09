@@ -176,6 +176,9 @@ GEM
       rubyzip
     shoulda-matchers (1.2.0)
       activesupport (>= 3.0.0)
+    show_for (0.2.5)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     simple_form (2.0.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -237,6 +240,7 @@ DEPENDENCIES
   rspec-rails (>= 2.11.0)
   sass-rails (~> 3.2.5)
   shoulda-matchers
+  show_for
   simple_form
   slim
   slim-rails

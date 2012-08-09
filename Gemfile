@@ -25,6 +25,7 @@ gem "slim-rails"
 # Tools
 gem 'simple_form'
 gem 'auto_html'
+gem 'show_for'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.5'
