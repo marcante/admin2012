@@ -62,6 +62,8 @@ module Celestin
 
     config.generators do |g|
       g.stylesheets false
+      g.javascripts false
+      g.helpers false
       g.template_engine :slim
       g.test_framework :rspec,
         :view_specs => false,
