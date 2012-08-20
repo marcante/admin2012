@@ -12,9 +12,13 @@
  *= require_tree .
  */
 @import bootstrap
+@import bootstrap-responsive
 
 body
-  margin-top: 50px
+  padding-top: 50px
 
-h1
-  margin-bottom: 20px
+//Responsive
+@media (max-width: 979px)
+  body
+    padding-top: 0
+

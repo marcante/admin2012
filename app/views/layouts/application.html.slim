@@ -7,6 +7,7 @@ html
     meta[name="description" content=""]
     meta[name="keywords" content=""]
     meta[name="author" content=""]
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
     = yield(:meta_tags)
     = csrf_meta_tag
     = javascript_include_tag "application"
@@ -14,20 +15,30 @@ html
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
-          a.brand href="/" CélestinWeb
-          ul.nav
-            li[class="#{'active' if request.path == root_path}"]
-              = link_to 'Home', root_path
-            li[class="#{'active' if controller.controller_name == 'users'}"]
-              = link_to 'Users', users_path
-          ul.nav.secondary-nav
-            li
-              = link_to "Profile settings", edit_user_registration_path(current_user) if user_signed_in?
-              = link_to "Sign in", new_user_session_path unless user_signed_in?
-            li
-              = link_to "Sign up", new_user_registration_path unless user_signed_in?
-            li
-              = link_to 'logout', destroy_user_session_path, :method => :delete if user_signed_in?
+          a.btn.btn-navbar data-target=".nav-collapse" data-toggle="collapse"
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand href="/" Events4me
+          .nav-collapse.collapse
+            ul.nav
+              - if user_signed_in?
+                li[class="#{'active' if request.path == root_path}"]
+                  = link_to 'Home', root_path
+                li[class="#{'active' if controller.controller_name == 'users'}"]
+                  = link_to 'Users', users_path
+            ul.nav.secondary-nav
+              li= link_to "Sign in", new_user_session_path unless user_signed_in?
+              li= link_to "Sign up", new_user_registration_path unless user_signed_in?
+            - if user_signed_in?
+              ul.nav.pull-right
+                li.dropdown
+                  a.dropdown-toggle href="#" data-toggle="dropdown"
+                    = current_user.name
+                    b.caret
+                  ul.dropdown-menu
+                    li= link_to "Profile settings", edit_user_registration_path(current_user)
+                    li= link_to 'Logout', destroy_user_session_path, :method => :delete if user_signed_in?
     header
     .container
       = yield
