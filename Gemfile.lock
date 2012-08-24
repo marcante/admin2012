@@ -35,6 +35,7 @@ GEM
       rinku (~> 1.5.0)
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.0.4.0)
+    breadcrumbs_on_rails (2.2.0)
     builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -179,6 +180,8 @@ GEM
     show_for (0.2.5)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
+    simple-navigation (3.8.0)
+      activesupport (>= 2.3.2)
     simple_form (2.0.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -221,6 +224,7 @@ PLATFORMS
 DEPENDENCIES
   auto_html
   bootstrap-sass
+  breadcrumbs_on_rails
   capybara
   coffee-rails (~> 3.2.2)
   compass-rails
@@ -241,6 +245,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.5)
   shoulda-matchers
   show_for
+  simple-navigation
   simple_form
   slim
   slim-rails

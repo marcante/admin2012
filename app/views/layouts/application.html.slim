@@ -21,12 +21,7 @@ html
             span.icon-bar
           a.brand href="/" CélestinWeb
           .nav-collapse.collapse
-            ul.nav
-              - if user_signed_in?
-                li[class="#{'active' if request.path == root_path}"]
-                  = link_to 'Home', root_path
-                li[class="#{'active' if controller.controller_name == 'users'}"]
-                  = link_to 'Users', users_path
+            = render_navigation
             ul.nav.secondary-nav
               li= link_to "Sign in", new_user_session_path unless user_signed_in?
               li= link_to "Sign up", new_user_registration_path unless user_signed_in?
@@ -41,5 +36,6 @@ html
                     li= link_to 'Logout', destroy_user_session_path, :method => :delete if user_signed_in?
     header
     .container
+      = render_breadcrumbs :builder => ::BootstrapBreadcrumbsBuilder if user_signed_in? rescue nil
       = yield
     footer

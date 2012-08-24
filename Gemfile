@@ -27,6 +27,10 @@ gem 'simple_form'
 gem 'auto_html'
 gem 'show_for'
 
+# Navigation
+gem 'simple-navigation'
+gem 'breadcrumbs_on_rails'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
